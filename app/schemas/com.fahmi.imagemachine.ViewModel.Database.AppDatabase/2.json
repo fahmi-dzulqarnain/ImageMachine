@@ -1,0 +1,84 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "1163135a6a11757d2e6e6329a448f3dc",
+    "entities": [
+      {
+        "tableName": "machine_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`machineId` INTEGER NOT NULL, `machine_name` TEXT, `machine_type` TEXT, `machine_qr_code` INTEGER NOT NULL, `last_maintenance_date` INTEGER, `machine_images` TEXT, PRIMARY KEY(`machineId`))",
+        "fields": [
+          {
+            "fieldPath": "machineId",
+            "columnName": "machineId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "machineName",
+            "columnName": "machine_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "machineType",
+            "columnName": "machine_type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "machineQrCode",
+            "columnName": "machine_qr_code",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastMaintenanceDate",
+            "columnName": "last_maintenance_date",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "machineImages",
+            "columnName": "machine_images",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "machineId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "type_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`type_name` TEXT NOT NULL, PRIMARY KEY(`type_name`))",
+        "fields": [
+          {
+            "fieldPath": "typeName",
+            "columnName": "type_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "type_name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1163135a6a11757d2e6e6329a448f3dc')"
+    ]
+  }
+}
