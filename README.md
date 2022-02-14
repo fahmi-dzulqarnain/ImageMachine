@@ -10,6 +10,7 @@ and easily access them also.
 
 # Application Flow (Design Solution)
 This is how the application work:
+
 ![ImageMachine - ActivityDiagram](https://user-images.githubusercontent.com/60492666/153791003-6dc86afd-83ab-4d9d-9317-a8c582f29ca1.jpg)
 
 # Technology or Library Used
