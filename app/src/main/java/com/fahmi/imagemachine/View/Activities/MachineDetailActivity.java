@@ -215,7 +215,7 @@ public class MachineDetailActivity extends AppCompatActivity {
                                         arrayString.add(URL);
                                 }
                             } else {
-                                Toast.makeText(this, "Please pick image less than or equal to 10 images", Toast.LENGTH_LONG).show();
+                                Toast.makeText(context, "Please pick image less than or equal to 10 images", Toast.LENGTH_LONG).show();
                             }
                         } else {
                             Uri imageUrl = data != null ? data.getData() : null;
