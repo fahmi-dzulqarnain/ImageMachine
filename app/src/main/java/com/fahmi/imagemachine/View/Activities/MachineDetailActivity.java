@@ -204,14 +204,18 @@ public class MachineDetailActivity extends AppCompatActivity {
                         if ((data != null ? data.getClipData() : null) != null) {
                             ClipData mClipData = data.getClipData();
                             int count = mClipData.getItemCount();
-                            for (int i = 0; i < count; i++) {
-                                Uri imageUrl = mClipData.getItemAt(i).getUri();
-                                String URL = FileUtils.getPath(context, imageUrl);
+                            if (count <= 10){
+                                for (int i = 0; i < count; i++) {
+                                    Uri imageUrl = mClipData.getItemAt(i).getUri();
+                                    String URL = FileUtils.getPath(context, imageUrl);
 
-                                if (imageUrl == null || URL == null)
-                                    toastUrlNotValid();
-                                else
-                                    arrayString.add(URL);
+                                    if (imageUrl == null || URL == null)
+                                        toastUrlNotValid();
+                                    else
+                                        arrayString.add(URL);
+                                }
+                            } else {
+                                Toast.makeText(this, "Please pick image less than or equal to 10 images", Toast.LENGTH_LONG).show();
                             }
                         } else {
                             Uri imageUrl = data != null ? data.getData() : null;
